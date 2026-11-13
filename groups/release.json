@@ -1,0 +1,6 @@
+{
+  "slug": "release",
+  "name": "Release skills",
+  "description": "Ship a version: well-formed commits and a user-facing changelog.",
+  "skills": ["commit-message", "changelog-writer"]
+}

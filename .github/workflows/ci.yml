@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Unit tests
+        run: node --test test/*.test.mjs
+      - name: Check skills (format, groups, immutability, proprietary content)
+        env:
+          BASE_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+        run: node scripts/check.mjs --base "$BASE_SHA"
+      - name: Index builds
+        run: node scripts/build-index.mjs --stdout > /dev/null
+
+  index:
+    needs: check
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: rebuild-index
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Rebuild index.json
+        run: node scripts/build-index.mjs
+      - name: Commit index.json if it changed
+        run: |
+          if git diff --quiet -- index.json; then
+            echo "index.json up to date"
+            exit 0
+          fi
+          git config user.name "Peckboard"
+          git config user.email "noreply@peckboard.com"
+          git add index.json
+          git commit -m "index: rebuild index.json"
+          git push origin HEAD:main

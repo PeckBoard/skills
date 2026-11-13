@@ -1,0 +1,6 @@
+{
+  "slug": "pr-review",
+  "name": "PR review skills",
+  "description": "Review a pull request end to end: correctness checklist, security pass, and a clean commit message.",
+  "skills": ["pr-review-checklist", "security-review", "commit-message"]
+}

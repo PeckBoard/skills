@@ -1,0 +1,131 @@
+{
+  "schema": 1,
+  "generated_at": "2026-11-13T07:24:58.366Z",
+  "skills": [
+    {
+      "name": "bug-repro",
+      "description": "Turn a bug report into a minimal, reliable reproduction and a failing test before attempting a fix.",
+      "tags": [
+        "debugging",
+        "testing"
+      ],
+      "groups": [
+        "testing"
+      ],
+      "versions": [
+        "1.0.0"
+      ],
+      "latest": "1.0.0"
+    },
+    {
+      "name": "changelog-writer",
+      "description": "Turn a range of commits or merged PRs into a user-facing changelog entry grouped by Added, Changed, Fixed, and Removed.",
+      "tags": [
+        "release",
+        "writing",
+        "git"
+      ],
+      "groups": [
+        "release"
+      ],
+      "versions": [
+        "1.0.0"
+      ],
+      "latest": "1.0.0"
+    },
+    {
+      "name": "commit-message",
+      "description": "Write a clear git commit message (subject + body) from a staged diff, explaining what changed and why.",
+      "tags": [
+        "git",
+        "writing"
+      ],
+      "groups": [
+        "pr-review",
+        "release"
+      ],
+      "versions": [
+        "1.0.0"
+      ],
+      "latest": "1.0.0"
+    },
+    {
+      "name": "pr-review-checklist",
+      "description": "Review a pull request or branch diff for correctness, tests, compatibility, and maintainability, and report verified findings ranked by severity.",
+      "tags": [
+        "review",
+        "git",
+        "quality"
+      ],
+      "groups": [
+        "pr-review"
+      ],
+      "versions": [
+        "1.1.0",
+        "1.0.0"
+      ],
+      "latest": "1.1.0"
+    },
+    {
+      "name": "security-review",
+      "description": "Review code changes for common security flaws (injection, authz gaps, secrets, unsafe deserialization, SSRF) and report exploitable findings.",
+      "tags": [
+        "security",
+        "review"
+      ],
+      "groups": [
+        "pr-review"
+      ],
+      "versions": [
+        "1.0.0"
+      ],
+      "latest": "1.0.0"
+    },
+    {
+      "name": "test-plan-writer",
+      "description": "Write a focused test plan for a feature or change — what to test, at which level, and which cases matter — before writing the tests.",
+      "tags": [
+        "testing",
+        "planning",
+        "quality"
+      ],
+      "groups": [
+        "testing"
+      ],
+      "versions": [
+        "1.0.0"
+      ],
+      "latest": "1.0.0"
+    }
+  ],
+  "groups": [
+    {
+      "slug": "pr-review",
+      "name": "PR review skills",
+      "description": "Review a pull request end to end: correctness checklist, security pass, and a clean commit message.",
+      "skills": [
+        "commit-message",
+        "pr-review-checklist",
+        "security-review"
+      ]
+    },
+    {
+      "slug": "release",
+      "name": "Release skills",
+      "description": "Ship a version: well-formed commits and a user-facing changelog.",
+      "skills": [
+        "changelog-writer",
+        "commit-message"
+      ]
+    },
+    {
+      "slug": "testing",
+      "name": "Testing skills",
+      "description": "Plan tests for a change and turn bug reports into failing tests before fixing them.",
+      "skills": [
+        "bug-repro",
+        "test-plan-writer"
+      ]
+    }
+  ]
+}

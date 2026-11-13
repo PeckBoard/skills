@@ -1,0 +1,6 @@
+{
+  "slug": "testing",
+  "name": "Testing skills",
+  "description": "Plan tests for a change and turn bug reports into failing tests before fixing them.",
+  "skills": ["test-plan-writer", "bug-repro"]
+}

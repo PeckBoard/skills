@@ -1,0 +1,14 @@
+{
+  "name": "peckboard-skills",
+  "private": true,
+  "type": "module",
+  "description": "Public skill catalog for Peckboard.",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "build-index": "node scripts/build-index.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

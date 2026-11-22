@@ -1,0 +1,6 @@
+{
+  "slug": "hardware",
+  "name": "Hardware skills",
+  "description": "Design circuits, circuit boards and multi-board systems and prove them with board checks, routing and simulation.",
+  "skills": ["smoketest-board-design"]
+}

@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-13T07:24:58.366Z",
+  "generated_at": "2026-11-22T23:00:39.800Z",
   "skills": [
     {
       "name": "bug-repro",
@@ -82,6 +82,25 @@
       "latest": "1.0.0"
     },
     {
+      "name": "smoketest-board-design",
+      "description": "Design circuits, boards and multi-board systems and prove them on smoketest.cloud: KiCad/generator design, free routing with length matching and pairs, board checks, simulation, systems, AI part models and routing reviews, order packages.",
+      "tags": [
+        "pcb",
+        "kicad",
+        "smoketest",
+        "routing",
+        "simulation",
+        "hardware"
+      ],
+      "groups": [
+        "hardware"
+      ],
+      "versions": [
+        "1.0.0"
+      ],
+      "latest": "1.0.0"
+    },
+    {
       "name": "test-plan-writer",
       "description": "Write a focused test plan for a feature or change — what to test, at which level, and which cases matter — before writing the tests.",
       "tags": [
@@ -99,6 +118,14 @@
     }
   ],
   "groups": [
+    {
+      "slug": "hardware",
+      "name": "Hardware skills",
+      "description": "Design circuits, circuit boards and multi-board systems and prove them with board checks, routing and simulation.",
+      "skills": [
+        "smoketest-board-design"
+      ]
+    },
     {
       "slug": "pr-review",
       "name": "PR review skills",
